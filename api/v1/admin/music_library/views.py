@@ -6,6 +6,7 @@ from api.v1.permissions import AdminPermission, SingerPermission, ListenerPermis
 from music_library.models import *
 
 
+# --------------------------License-----------------------------
 class AdminLicenseCreateView(CreateAPIView):
     permission_classes = [SingerPermission]
     serializer_class = AdminLicenseCreateSerializer
@@ -32,3 +33,32 @@ class AdminLicenseUpdateView(UpdateAPIView):
 class AdminLicenseDeleteView(DestroyAPIView):
     permission_classes = [AdminPermission | SingerPermission]
     queryset = License.objects.all()
+
+
+# ------------------------Album-------------------------------
+class AdminAlbumCreateView(CreateAPIView):
+    permission_classes = [SingerPermission]
+    serializer_class = AdminAlbumCreateSerializer
+
+
+class AdminAlbumListView(ListAPIView):
+    permission_classes = [SingerPermission | AdminPermission | ListenerPermission]
+    serializer_class = AdminAlbumListSerializer
+    queryset = Album.objects.all()
+
+
+class AdminAlbumDetailView(RetrieveAPIView):
+    permission_classes = [SingerPermission | AdminPermission | ListenerPermission]
+    serializer_class = AdminAlbumDetailSerializer
+    queryset = Album.objects.all()
+
+
+class AdminAlbumUpdateView(UpdateAPIView):
+    permission_classes = [SingerPermission]
+    serializer_class = AdminAlbumUpdateSerializer
+    queryset = Album.objects.all()
+
+
+class AdminAlbumDeleteView(DestroyAPIView):
+    permission_classes = [SingerPermission | AdminPermission]
+    queryset = Album.objects.all()

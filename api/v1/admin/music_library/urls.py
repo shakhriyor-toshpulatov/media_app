@@ -9,4 +9,11 @@ urlpatterns = [
     path('license/update/<int:pk>/', views.AdminLicenseUpdateView.as_view()),
     path('license/delete/<int:pk>/', views.AdminLicenseDeleteView.as_view()),
 
+    # Album
+    path('album/create/', views.AdminAlbumCreateView.as_view()),
+    path('album/list/', views.AdminAlbumListView.as_view()),
+    path('album/detail/<int:pk>/', views.AdminAlbumDetailView.as_view()),
+    path('album/update/<int:pk>/', views.AdminAlbumUpdateView.as_view()),
+    path('album/delete/<int:pk>/', views.AdminAlbumDeleteView.as_view()),
+
 ]

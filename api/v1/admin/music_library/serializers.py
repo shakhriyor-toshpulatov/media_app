@@ -1,9 +1,8 @@
-from django.contrib.auth.password_validation import validate_password
-from django.core.exceptions import ValidationError
 from rest_framework import serializers
 from music_library.models import *
 
 
+# ------------------------License-------------------------------
 class AdminLicenseCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = License
@@ -48,4 +47,56 @@ class AdminLicenseUpdateSerializer(serializers.ModelSerializer):
             'id',
             'user',
             'text',
+        ]
+
+
+# ------------------------Album-------------------------------
+class AdminAlbumCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Album
+        fields = [
+            'id',
+            'user',
+            'name',
+            'description',
+            'private',
+            'cover'
+        ]
+
+
+class AdminAlbumListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Album
+        fields = [
+            'id',
+            'user',
+            'name',
+            'private',
+            'cover'
+        ]
+
+
+class AdminAlbumDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Album
+        fields = [
+            'id',
+            'user',
+            'name',
+            'description',
+            'private',
+            'cover'
+        ]
+
+
+class AdminAlbumUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Album
+        fields = [
+            'id',
+            'user',
+            'name',
+            'description',
+            'private',
+            'cover'
         ]
