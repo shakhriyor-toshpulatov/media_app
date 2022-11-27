@@ -13,7 +13,7 @@ class RefreshTokenView(TokenRefreshView):
 
 
 class ObtainTokenPairView(TokenObtainPairView):
-    serializer_class = serializers.UserTokenObtainPairSerializer
+    serializer_class = serializers.TokenObtainPairSerializer
 
 
 class APILogoutView(APIView):

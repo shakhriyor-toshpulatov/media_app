@@ -13,7 +13,7 @@ class UserRoleChoices(models.TextChoices):
 
 class User(AbstractUser, models.Model):
     role = models.CharField(max_length=50, choices=UserRoleChoices.choices, blank=True, null=True)
-    phone_number = models.CharField(max_length=100, blank=True, null=True)
+    phone_number = models.CharField(max_length=50, blank=True, null=True)
     is_deleted = models.BooleanField(default=False)
 
     REQUIRED_FIELDS = ['role']
