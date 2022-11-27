@@ -48,6 +48,7 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     'user',
+    'music_library',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -138,10 +139,6 @@ AUTH_USER_MODEL = "user.User"
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-# _______________________________ Django Debug Toolbar ______________________________________
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
 # ___________________________________________________________________________________________
 
 # ------------------------------------ Restframework settings --------------------------------
