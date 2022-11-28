@@ -16,4 +16,10 @@ urlpatterns = [
     path('album/update/<int:pk>/', views.AdminAlbumUpdateView.as_view()),
     path('album/delete/<int:pk>/', views.AdminAlbumDeleteView.as_view()),
 
+    # Track
+    path('track/create/', views.AdminTrackCreateView.as_view()),
+    path('track/list/', views.AdminTrackListView.as_view()),
+    path('track/detail/<int:pk>/', views.AdminTrackDetailView.as_view()),
+    path('track/update/<int:pk>/', views.AdminTrackUpdateView.as_view()),
+    path('track/delete/<int:pk>/', views.AdminTrackDeleteView.as_view()),
 ]

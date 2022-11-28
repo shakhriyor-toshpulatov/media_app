@@ -62,3 +62,32 @@ class AdminAlbumUpdateView(UpdateAPIView):
 class AdminAlbumDeleteView(DestroyAPIView):
     permission_classes = [SingerPermission | AdminPermission]
     queryset = Album.objects.all()
+
+
+# ------------------------Track---------------------------
+class AdminTrackCreateView(CreateAPIView):
+    permission_classes = [SingerPermission]
+    serializer_class = AdminTrackCreateSerializer
+
+
+class AdminTrackListView(ListAPIView):
+    permission_classes = [SingerPermission | AdminPermission | ListenerPermission]
+    serializer_class = AdminTrackListSerializer
+    queryset = Track.objects.all()
+
+
+class AdminTrackDetailView(RetrieveAPIView):
+    permission_classes = [SingerPermission | AdminPermission | ListenerPermission]
+    serializer_class = AdminTrackDetailSerializer
+    queryset = Track.objects.all()
+
+
+class AdminTrackUpdateView(UpdateAPIView):
+    permission_classes = [SingerPermission]
+    serializer_class = AdminTrackUpdateSerializer
+    queryset = Track.objects.all()
+
+
+class AdminTrackDeleteView(DestroyAPIView):
+    permission_classes = [SingerPermission | AdminPermission]
+    queryset = Track.objects.all()

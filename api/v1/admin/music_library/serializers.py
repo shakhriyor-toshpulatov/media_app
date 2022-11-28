@@ -100,3 +100,84 @@ class AdminAlbumUpdateSerializer(serializers.ModelSerializer):
             'private',
             'cover'
         ]
+
+
+# ------------------------Track-------------------------------
+class AdminTrackCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Track
+        fields = [
+            'id',
+            'user',
+            'title',
+            'license',
+            'album',
+            'link_of_author',
+            'file',
+            'plays_count',
+            'download',
+            'likes_count',
+            'user_of_likes',
+            'private',
+            'cover',
+        ]
+
+
+class AdminTrackListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Track
+        fields = [
+            'id',
+            'user',
+            'title',
+            'license',
+            'album',
+            'link_of_author',
+            'file',
+            'plays_count',
+            'download',
+            'likes_count',
+            'user_of_likes',
+            'private',
+            'cover',
+        ]
+
+
+class AdminTrackDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Track
+        fields = [
+            'id',
+            'user',
+            'title',
+            'license',
+            'album',
+            'link_of_author',
+            'file',
+            'plays_count',
+            'download',
+            'likes_count',
+            'user_of_likes',
+            'private',
+            'cover',
+        ]
+
+
+class AdminTrackUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Track
+        fields = [
+            'id',
+            'user',
+            'title',
+            'license',
+            'album',
+            'link_of_author',
+            'file',
+            'plays_count',
+            'download',
+            'likes_count',
+            'user_of_likes',
+            'private',
+            'cover',
+        ]
